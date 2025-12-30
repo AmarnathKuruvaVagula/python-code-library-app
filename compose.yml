@@ -1,0 +1,51 @@
+---
+services:
+  db:
+    image: amarnathkv/dockerproject:dbimage
+    deploy:
+      replicas: 2
+    ports:
+      - "80"
+    networks:
+      - amarnetwork
+
+  auth_service:
+    image: amarnathkv/dockerproject:authimage
+    deploy:
+      replicas: 2
+    ports:
+      - "80"
+    networks:
+      - amarnetwork
+
+  book_service:
+    image: amarnathkv/dockerproject:bookimage
+    deploy:
+      replicas: 2
+    ports:
+      - "80"
+    networks:
+      - amarnetwork
+
+  borrow_service:
+    image: amarnathkv/dockerproject:borrowimage
+    deploy:
+      replicas: 2
+    ports:
+      - "80"
+    networks:
+      - amarnetwork
+
+  frontend:
+    image: amarnathkv/dockerproject:appimage
+    deploy:
+      replicas: 2
+    ports:
+      - "80"
+    networks:
+      - amarnetwork
+
+networks:
+  amarnetwork:
+    driver: bridge
+
