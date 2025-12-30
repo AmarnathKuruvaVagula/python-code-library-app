@@ -6,8 +6,6 @@ services:
       replicas: 2
     ports:
       - "80"
-    networks:
-      - amarnetwork
 
   auth_service:
     image: amarnathkv/dockerproject:authimage
@@ -15,8 +13,6 @@ services:
       replicas: 2
     ports:
       - "80"
-    networks:
-      - amarnetwork
 
   book_service:
     image: amarnathkv/dockerproject:bookimage
@@ -24,8 +20,6 @@ services:
       replicas: 2
     ports:
       - "80"
-    networks:
-      - amarnetwork
 
   borrow_service:
     image: amarnathkv/dockerproject:borrowimage
@@ -33,8 +27,6 @@ services:
       replicas: 2
     ports:
       - "80"
-    networks:
-      - amarnetwork
 
   frontend:
     image: amarnathkv/dockerproject:appimage
@@ -42,10 +34,4 @@ services:
       replicas: 2
     ports:
       - "80"
-    networks:
-      - amarnetwork
-
-networks:
-  amarnetwork:
-    driver: bridge
 
